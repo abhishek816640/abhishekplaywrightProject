@@ -1,7 +1,10 @@
 const { LoginPage } = require('./LoginPage');
 const { DashBoardPage } = require('./DashBoardPage');
+const { OrdersHistoryPage } = require('./OrdersHistoryPage');
+const { OrdersReviewPage } = require('./OrdersReviewPage');
+const { CartPage } = require('./CartPage');
 
-class POmaneger {
+class POManager {
     constructor(page) {
         this.page = page;
         this.loginPage = new LoginPage(this.page);
@@ -11,7 +14,7 @@ class POmaneger {
         this.cartPage = new CartPage(this.page);
     }
 
-    getLoginpage() {
+    getLoginPage() {
         return this.loginPage;
     }
 
@@ -30,6 +33,11 @@ class POmaneger {
     getOrdersReviewPage() {
         return this.ordersReviewPage;
     }
-}
 
-module.exports = { POmaneger };
+    getDashboardPage()
+    {
+        return this.dashBoardPage;
+    }
+}
+module.exports = {POManager};
+
