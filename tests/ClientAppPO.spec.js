@@ -5,7 +5,7 @@ const { POManager } = require('../pageObjects/POManager')
 const dataSet = JSON.parse(JSON.stringify(require("../utils/PlaceOrder")));
 for(const data of dataSet)
 {
-   test('Client Po Login ${data.productName}', async ({page}) => {
+   test(`Client Po Login ${data.productName}`, async ({page}) => {
    //js file- Login js, DashboardPage
    const username = data.username;
    const password = data.password;
