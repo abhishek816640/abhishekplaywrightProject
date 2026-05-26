@@ -1,10 +1,11 @@
 class DashBoardPage {
-    constructor(page) {
+    constructor(page, productName) {
         this.page = page
         this.products = this.page.locator(".card-body");
         this.productText = this.page.locator(".card-body b");
         this.cart = this.page.locator("[routerlink*='cart']");
-        this.productName = this.page.locator(`h3:has-text("ZARA COAT 3")`);
+        this.productName = this.page.locator("h5:has-text('" + productName + "')");
+        this.orders = page.locator("button[routerlink*='myorders']");
     }
 
     async searchProduct(productName) {
@@ -13,9 +14,10 @@ class DashBoardPage {
         const count = await this.products.count();
         console.log(count);
         for (let i = 0; i < count; ++i) {
+            console.log(await this.productName.textContent());
             if (await this.products.nth(i).locator("b").textContent() === productName) {
                 console.log("ZARA COAT 3 is found");
-                await this.products.nth(i).locator('button:has-text("Add To Cart")').click();
+                await this.products.nth(i).getByRole('button', { name: 'Add To cart' }).click();
                 break;
             }
         }
@@ -25,5 +27,9 @@ class DashBoardPage {
         await (this.page.locator(".cart li")).waitFor();
         const bool = await this.productName.isVisible(1);
     }
+
+    async navigateToOrders() {
+        await this.orders.click();
+    }
 }
-module.exports = {DashBoardPage};
+module.exports = { DashBoardPage };

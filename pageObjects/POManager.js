@@ -5,10 +5,10 @@ const { OrdersReviewPage } = require('./OrdersReviewPage');
 const { CartPage } = require('./CartPage');
 
 class POManager {
-    constructor(page) {
+    constructor(page,productName) {
         this.page = page;
         this.loginPage = new LoginPage(this.page);
-        this.dashBoardPage = new DashBoardPage(this.page);
+        this.dashBoardPage = new DashBoardPage(this.page,productName);
         this.ordersHistoryPage = new OrdersHistoryPage(this.page);
         this.ordersReviewPage = new OrdersReviewPage(this.page);
         this.cartPage = new CartPage(this.page);
