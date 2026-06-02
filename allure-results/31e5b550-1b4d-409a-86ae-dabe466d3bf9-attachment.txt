@@ -1,0 +1,7 @@
+[ 'ADIDAS ORIGINAL', 'ZARA COAT 3', 'iphone 13 pro' ]
+3
+iphone 13 pro
+iphone 13 pro
+iphone 13 pro
+ZARA COAT 3 is found
+ | 6a1dbf6417ee3e78bab01e04 | 
