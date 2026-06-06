@@ -8,9 +8,9 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   timeout : 40*1000,
-  reporter: 'html',
+  reporter: [["line"], ["allure-playwright"]],
     use: {
-     headless: false,
+     headless: true,
     browserName: 'chromium',
     screenshot: 'on',
     trace: 'on',

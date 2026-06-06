@@ -10,11 +10,12 @@ export default defineConfig({
   timeout: 40 * 1000,
   reporter : [["line"], ["allure-playwright"]],
   retries : 2,
+  workers : 1,
   projects: [
     {
       name: 'safari',
       use: {
-        headless: false,
+        headless: true,
         browserName: 'webkit',
         screenshot: 'on',
         trace: 'on',
