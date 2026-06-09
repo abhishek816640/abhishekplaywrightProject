@@ -33,4 +33,4 @@ export class CartPage {
     }
 
 }
-module.exports = { CartPage };
+export { CartPage };
